@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">ADV Miguelturra</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="title_activity_day">Horario</string>
+    <string name="title_activity_game">Partido</string>
+    <string name="title_activity_calendar">Calendario</string>
+    <string name="title_activity_qualif_chooser">Clasificaciones</string>
+
+    <string name="action_order_date">Ordenar por fecha</string>
+    <string name="action_order_category">Ordenar por categoría</string>
+    <string name="title_activity_competition_chooser">Competiciones y Torneos</string>
+
+    <string-array name="categories">
+        <item>SUPERLIGA</item>
+        <item>SUPERLIGA2</item>
+        <item>PRIMERA</item>
+        <item>SEGUNDA</item>
+        <item>SENIOR</item>
+        <item>PRO</item>
+        <item>JUVENIL</item>
+        <item>CADETE</item>
+        <item>INFANTIL</item>
+        <item>ALEVIN</item>
+        <item>AFICIONADOS</item>
+    </string-array>
+
+    <string-array name="divisions">
+        <item>FEMENINA</item>
+        <item>MASCULINA</item>
+        <item>MIXTO</item>
+    </string-array>
+
+    <string-array name="phases">
+        <item>LIGA</item>
+        <item>ELIMINATORIA</item>
+        <item>OCTAVOS</item>
+        <item>CUARTOS</item>
+        <item>SEMIFINAL</item>
+        <item>BRONCE</item>
+        <item>FINAL</item>
+    </string-array>
+    <string name="title_activity_ranking">Ranking</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_cloudant">CloudantActivity</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_activity_tabbed_calendar">Calendario</string>
+    <string name="title_activity_teams">Equipos</string>
+    <string name="title_activity_question">Pregunta</string>
+    <string name="title_equipacion_list">Equipaciones</string>
+    <string name="title_equipacion_detail">Equipacion Detail</string>
+    <string name="last_notification">LAST_NOTIFICATION</string>
+    <string name="title_activity_notifications">Notificaciones</string>
+    <string name="title_activity_new_teams">NewTeamsActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+</resources>

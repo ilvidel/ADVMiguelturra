@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "251066530747",
+    "firebase_url": "https://project-752671807354501180.firebaseio.com",
+    "project_id": "project-752671807354501180",
+    "storage_bucket": "project-752671807354501180.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251066530747:android:1144df44472e5f09",
+        "android_client_info": {
+          "package_name": "org.advmiguelturra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251066530747-1qbg58kr5uss29hknn5hnbm28g8il599.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9itT5cgDTZpKw8qPm6Eb-DDzAM9ArqaQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

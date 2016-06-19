@@ -1,0 +1,86 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.advmiguelturra.RankingActivity"
+    android:orientation="vertical">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/headerRow">
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="#"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Equipo"
+            android:layout_weight="7"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="J"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="G"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="P"
+            android:layout_weight="1"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="S+"
+            android:layout_weight="1"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="S-"
+            android:layout_weight="1"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="P+"
+            android:layout_weight="1"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="P-"
+            android:layout_weight="1"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="T"
+            android:layout_weight="1"
+            android:gravity="center" />
+    </TableRow>
+
+    <ScrollView
+        android:id="@+id/scrollRanking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,122 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/background"
+    android:id="@+id/mainLayout">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:src="@mipmap/splash_landscape"
+        android:layout_weight="5" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+
+        <Button
+            android:id="@+id/gamesButton"
+            android:text="Partidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showCalendar"/>
+
+        <Button
+            android:id="@+id/teamsButton"
+            android:text="Equipos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="showTeams" />
+
+        <Button
+            android:id="@+id/picturesButton"
+            android:text="Galería de Fotos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="viewPictures"/>
+
+        <!--Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clasificaciones"
+            android:id="@+id/rankingButton"
+            android:enabled="true"
+            android:onClick="showQualifications"
+            android:layout_weight="1"
+            android:visibility="gone" /-->
+
+        <!--Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar comentario"
+            android:id="@+id/contactButton"
+            android:hint="Envia un comentario"
+            android:visibility="gone"
+            android:enabled="false"
+            android:layout_weight="1" /-->
+
+        <!--Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Marcador"
+            android:id="@+id/liveScoreButton"
+            android:enabled="false"
+            android:visibility="gone"
+            android:gravity="center" /-->
+
+
+        <!--Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Populate DB"
+            android:id="@+id/populateDbButton"
+            android:onClick="populateDatabase"
+            android:gravity="center"
+            android:visibility="gone" /-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="version"
+            android:id="@+id/versionText"
+            android:layout_marginBottom="16dp"
+            android:textColor="@android:color/primary_text_dark"
+            android:gravity="center_horizontal|bottom"
+            android:layout_weight="10" />
+
+        <!--android:background="#f02"-->
+
+        <LinearLayout
+            android:id="@+id/adminbuttons"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f03"
+                android:text="Añadir Partido"
+                android:id="@+id/addGameButton"
+                android:onClick="addGame"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f03"
+                android:text="Crear Notificación"
+                android:id="@+id/test_createNotification"
+                android:onClick="createNotification" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

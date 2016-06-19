@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="org.advmiguelturra.CalendarActivity">
+
+    <item android:id="@+id/action_order_category" android:title="por Categoría"
+        android:orderInCategory="100" app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_order_date" android:title="por Fecha"
+        android:orderInCategory="90" app:showAsAction="ifRoom" />
+</menu>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view"
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    card_view:cardElevation="4dp"
+    card_view:cardCornerRadius="10dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/notification_large_icon_width"
+            android:layout_height="@dimen/notification_large_icon_height"
+            android:id="@+id/listIcon"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/profem" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp">
+
+            <TableRow android:layout_width="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="This is a very long text"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:layout_column="0"
+                    android:id="@+id/listLocalTeam"
+                    android:textAppearance="@android:style/TextAppearance.Medium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@android:style/TextAppearance.Large"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:id="@+id/listLocalScore"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="12dp" />
+            </TableRow>
+
+            <TableRow android:layout_width="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Another long text "
+                    android:id="@+id/listVisitorTeam"
+                    android:layout_column="0"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textAppearance="@android:style/TextAppearance.Medium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@android:style/TextAppearance.Large"
+                    android:text="0"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    android:id="@+id/listVisitorScore"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="12dp" />
+
+            </TableRow>
+
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_span="2"
+                    android:orientation="horizontal"
+                    android:gravity="fill"
+                    android:layout_weight="1">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@android:style/TextAppearance.Small"
+                        android:text="FECHA"
+                        android:singleLine="true"
+                        android:gravity="start"
+                        android:id="@+id/listDate"
+                        android:layout_weight="2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@android:style/TextAppearance.Small"
+                        android:text="SEMIFINAL"
+                        android:singleLine="true"
+                        android:gravity="center"
+                        android:id="@+id/listPhase"
+                        android:layout_weight="5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@android:style/TextAppearance.Small"
+                        android:text="HORA"
+                        android:singleLine="true"
+                        android:gravity="end"
+                        android:id="@+id/listTime"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

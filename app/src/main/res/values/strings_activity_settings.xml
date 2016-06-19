@@ -1,0 +1,28 @@
+<resources>
+    <string name="title_activity_settings">Ajustes</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_sorting">Ordenar partidos por:</string>
+    <string-array name="pref_sorting_titles">
+        <item>Fecha</item>
+        <item>Categoría</item>
+    </string-array>
+    <string-array name="pref_sorting_values">
+        <item>date</item>
+        <item>category</item>
+    </string-array>
+
+
+    <string name="pref_notification_time">Notificaciones</string>
+    <string-array name="pref_notification_time_titles">
+        <item>1 hora</item>
+        <item>3 horas</item>
+        <item>6 horas</item>
+        <item>1 día</item>
+        <item>Desactivar</item>
+    </string-array>
+</resources>
