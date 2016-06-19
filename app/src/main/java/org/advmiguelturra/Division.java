@@ -1,10 +1,10 @@
 package org.advmiguelturra;
 
 /**
- * Created by nacho on 7/05/15.
+ * Game divisions, by gener
  */
 public enum Division {
-    FEMENINA,
-    MASCULINA,
-    MIXTO;
+    WOMEN,
+    MEN,
+    MIXED
 }

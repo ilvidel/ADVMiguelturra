@@ -36,6 +36,7 @@ public class GameActivity extends Activity {
     private EditText timeClock;
     private boolean adding;
 
+    //TODO use clubs and teams logos in the view
 
     View.OnFocusChangeListener focusListener = new View.OnFocusChangeListener() {
         @Override

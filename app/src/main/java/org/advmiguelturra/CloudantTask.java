@@ -1,7 +1,6 @@
 package org.advmiguelturra;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -13,8 +12,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.ConnectException;
-import java.util.ArrayList;
-import java.util.Calendar;
 
 /**
  * An interface to perform queries to the database, in the background
@@ -29,8 +26,7 @@ public class CloudantTask extends AsyncTask {
         GET_COMP_DAYS,
         DELETE,
         GET_TEAM,
-        GET_NOTIFICATIONS,
-        ADD_NOTIFICATION;
+        ADD_NOTIFICATION
     }
 
     private Context context;
@@ -46,7 +42,7 @@ public class CloudantTask extends AsyncTask {
     protected Object doInBackground(Object[] params) {
         action = (Action) params[0];
         CloudantManager cloudant = new CloudantManager();
-        JSONObject response = null;
+        JSONObject response = new JSONObject();
 
         if(!hasConnection()) {
             return new ConnectException("ERROR: No se ha encontrado una conexión válida");

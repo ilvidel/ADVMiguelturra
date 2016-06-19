@@ -25,7 +25,7 @@ import java.util.HashMap;
 public class RankingActivity extends ActionBarActivity {
 
     private ArrayList<Game> partidos;
-    private ArrayList<Equipo> ranking;
+    private ArrayList<Team> ranking;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -79,7 +79,7 @@ public class RankingActivity extends ActionBarActivity {
         list.addView(row);
 
         int i=1;
-        for(Equipo e : ranking) {
+        for(Team e : ranking) {
             row = new TableRow(this);
             row.setLayoutParams(rowLayoutParams);
             TextView cell = new TextView(this);
@@ -89,50 +89,50 @@ public class RankingActivity extends ActionBarActivity {
             row.addView(cell);
 
             cell = new TextView(this);
-            cell.setText(e.getNombre());
+            cell.setText(e.getName());
             cell.setLayoutParams(wide);
             cell.setEllipsize(TextUtils.TruncateAt.END);
             cell.setSingleLine(true);
             row.addView(cell);
 
             cell = new TextView(this);
-            cell.setText(String.valueOf(e.getJugados()));
+            cell.setText(String.valueOf(e.getPlayed()));
             cell.setLayoutParams(thin);
             cell.setGravity(Gravity.CENTER);
             row.addView(cell);
 
             cell = new TextView(this);
-            cell.setText(String.valueOf(e.getGanados()));
+            cell.setText(String.valueOf(e.getWon()));
             cell.setLayoutParams(thin);
             cell.setGravity(Gravity.CENTER);
             row.addView(cell);
 
             cell = new TextView(this);
-            cell.setText(String.valueOf(e.getPerdidos()));
+            cell.setText(String.valueOf(e.getLost()));
             cell.setLayoutParams(thin);
             cell.setGravity(Gravity.CENTER);
             row.addView(cell);
 
             cell = new TextView(this);
-            cell.setText(String.valueOf(e.getSetsF()));
+            cell.setText(String.valueOf(e.getSetsWon()));
             cell.setLayoutParams(thin);
             cell.setGravity(Gravity.CENTER);
             row.addView(cell);
 
             cell = new TextView(this);
-            cell.setText(String.valueOf(e.getSetsC()));
+            cell.setText(String.valueOf(e.getSetsLost()));
             cell.setLayoutParams(thin);
             cell.setGravity(Gravity.CENTER);
             row.addView(cell);
 
             cell = new TextView(this);
-            cell.setText(String.valueOf(e.getPuntosF()));
+            cell.setText(String.valueOf(e.getPointsWon()));
             cell.setLayoutParams(thin);
             cell.setGravity(Gravity.CENTER);
             row.addView(cell);
 
             cell = new TextView(this);
-            cell.setText(String.valueOf(e.getPuntosC()));
+            cell.setText(String.valueOf(e.getPointsLost()));
             cell.setLayoutParams(thin);
             cell.setGravity(Gravity.CENTER);
             row.addView(cell);
@@ -153,23 +153,23 @@ public class RankingActivity extends ActionBarActivity {
         partidos = new ArrayList<>();
         for (JSONObject o : games) {
             Game g = new Game(o);
-            if(g.getPhase() == Phase.LIGA)
+            if(g.getPhase() == Phase.LEAGUE)
                 partidos.add(g);
         }
     }
 
     private void getRanking() {
-        HashMap<String, Equipo> equipos = new HashMap<>();
+        HashMap<String, Team> equipos = new HashMap<>();
 
         for(Game game : partidos) {
             String teama = game.getTeamA();
             String teamb = game.getTeamB();
             if(!equipos.containsKey(teama)) {
-                equipos.put(teama, new Equipo(teama));
+                equipos.put(teama, new Team(teama));
             }
 
             if(!equipos.containsKey(teamb)) {
-                equipos.put(teamb, new Equipo(teamb));
+                equipos.put(teamb, new Team(teamb));
             }
 
             if(game.getWonA() > game.getWonB()) {
@@ -186,9 +186,9 @@ public class RankingActivity extends ActionBarActivity {
         Collections.sort(ranking);
     }
 
-    private ArrayList<Equipo> getAsList(Collection<Equipo> equipos) {
-        ArrayList<Equipo> retval = new ArrayList<>();
-        for(Equipo e : equipos)
+    private ArrayList<Team> getAsList(Collection<Team> teams) {
+        ArrayList<Team> retval = new ArrayList<>();
+        for(Team e : teams)
             retval.add(e);
 
         return retval;

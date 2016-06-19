@@ -173,55 +173,55 @@ public class GameListAdapter extends BaseAdapter {
         locScore.setText(String.valueOf(item.getWonA()));
         visScore.setText(String.valueOf(item.getWonB()));
 
-        if(item.getPhase()!=Phase.LIGA)
+        if(item.getPhase()!=Phase.LEAGUE)
             phase.setText(item.getPhase().toString());
         else
             phase.setText("");
 
         switch(item.getCategory()){
             case SUPERLIGA:
-                if(item.getDivision()==Division.MASCULINA) icon.setImageResource(R.drawable.smv);
+                if(item.getDivision()==Division.MEN) icon.setImageResource(R.drawable.smv);
                 else icon.setImageResource(R.drawable.sfv);
                 break;
             case SUPERLIGA2:
-                if(item.getDivision()==Division.MASCULINA) icon.setImageResource(R.drawable.sm2);
+                if(item.getDivision()==Division.MEN) icon.setImageResource(R.drawable.sm2);
                 else icon.setImageResource(R.drawable.sf2);
                 break;
             case PRIMERA:
-                if(item.getDivision()==Division.MASCULINA) icon.setImageResource(R.drawable.pdm);
+                if(item.getDivision()==Division.MEN) icon.setImageResource(R.drawable.pdm);
                 else icon.setImageResource(R.drawable.pdf);
                 break;
             case SEGUNDA:
-                if(item.getDivision()==Division.MASCULINA) icon.setImageResource(R.drawable.sdm);
+                if(item.getDivision()==Division.MEN) icon.setImageResource(R.drawable.sdm);
                 else icon.setImageResource(R.drawable.sdf);
                 break;
             case JUVENIL:
-                if(item.getDivision()==Division.MASCULINA) icon.setImageResource(R.drawable.jm);
+                if(item.getDivision()==Division.MEN) icon.setImageResource(R.drawable.jm);
                 else icon.setImageResource(R.drawable.jf);
                 break;
             case CADETE:
-                if(item.getDivision()==Division.MASCULINA)
+                if(item.getDivision()==Division.MEN)
                     icon.setImageResource(R.drawable.cm);
                 else icon.setImageResource(R.drawable.cf);
                 break;
             case INFANTIL:
-                if(item.getDivision()==Division.MASCULINA)
+                if(item.getDivision()==Division.MEN)
                     icon.setImageResource(R.drawable.im);
                 else icon.setImageResource(R.drawable.ifem);
                 break;
             case ALEVIN:
-                if(item.getDivision()==Division.MASCULINA)
+                if(item.getDivision()==Division.MEN)
                     icon.setImageResource(R.drawable.am);
                 else icon.setImageResource(R.drawable.af);
                 break;
             case AFICIONADOS: //playa
-                if(item.getDivision()==Division.MIXTO)
+                if(item.getDivision()==Division.MIXED)
                     icon.setImageResource(R.drawable.afimix);
                 else icon.setImageResource(R.drawable.afic);
                 break;
             case PRO: //playa
-                if(item.getDivision()==Division.MASCULINA) icon.setImageResource(R.drawable.promasc);
-                else if(item.getDivision()==Division.FEMENINA) icon.setImageResource(R.drawable.profem);
+                if(item.getDivision()==Division.MEN) icon.setImageResource(R.drawable.promasc);
+                else if(item.getDivision()==Division.WOMEN) icon.setImageResource(R.drawable.profem);
                 else icon.setImageResource(R.drawable.promix);
 
         }

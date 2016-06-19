@@ -6,9 +6,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.Serializable;
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetEncoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -33,9 +30,9 @@ public class Game implements Serializable {
         rev = "";
         date = Calendar.getInstance();
         category = Category.AFICIONADOS;
-        division = Division.MASCULINA;
+        division = Division.MEN;
         competition = "Competición";
-        phase = Phase.LIGA;
+        phase = Phase.LEAGUE;
         pool = 'A';
         teamA = "EquipoA";
         teamB = "EquipoB";
@@ -81,7 +78,8 @@ public class Game implements Serializable {
     }
 
     public String getTime() {
-        return String.format("%02d:%02d",
+        return String.format(Locale.getDefault(),
+                "%02d:%02d",
                 date.get(Calendar.HOUR_OF_DAY),
                 date.get(Calendar.MINUTE));
     }
@@ -225,8 +223,8 @@ public class Game implements Serializable {
         p.setCategory(category);
         p.setCompetition(competition);
         p.setPool(pool);
-        p.setTeamA(teamA.toString());
-        p.setTeamB(teamB.toString());
+        p.setTeamA(teamA);
+        p.setTeamB(teamB);
         p.setSetsA(setsA.clone());
         p.setSetsB(setsB.clone());
         p.setPhase(phase);

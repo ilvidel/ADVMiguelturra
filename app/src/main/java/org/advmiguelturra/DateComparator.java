@@ -4,7 +4,11 @@ import java.util.Calendar;
 import java.util.Comparator;
 
 /**
- * Created by nacho on 4/07/15.
+ * Comparator class for dates.
+ *
+ * This is necesary because we treat games played from midnight to 8am to be in the same day.
+ * This is mainly for the beach volleyball tournament; where the "day" starts about 18:00 and
+ * ends about 2:00 am
  */
 public class DateComparator implements Comparator<Game> {
     /**

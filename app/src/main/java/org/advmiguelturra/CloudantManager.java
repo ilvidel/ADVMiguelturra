@@ -1,7 +1,6 @@
 package org.advmiguelturra;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpDelete;
@@ -53,15 +52,14 @@ public class CloudantManager extends Thread {
     /**
      * Add a notification. This should be later shown in the app.
      *
-     * @param notification
+     * @param notification The notification to send
      * @return The response from the DB
      */
     public JSONObject commitNotification(AdvNotification notification) throws IOException, JSONException {
         String url =  "https://fcm.googleapis.com/fcm/send";
         JSONObject jsonNotify = notification.toJson();
 
-        JSONObject response =  runPOSTrequest(url, jsonNotify.toString(), Credentials.FIREBASE_API_KEY);
-        return response;
+        return runPOSTrequest(url, jsonNotify.toString(), Credentials.FIREBASE_API_KEY);
     }
 
     /**
@@ -72,6 +70,8 @@ public class CloudantManager extends Thread {
      */
     private JSONObject runPOSTrequest(String url, String data, String auth) throws JSONException, IOException {
         Log.d("RUN POST", data);
+
+        //TODO stop using deprecated APIs and use Android's "volley" API
 
         DefaultHttpClient httpClient = new DefaultHttpClient();
         HttpPost request = new HttpPost(url);
@@ -257,7 +257,8 @@ public class CloudantManager extends Thread {
 
         Collections.sort(dates);
         for(Calendar d : dates) {
-            retval.add(String.format("%02d-%02d-%04d",
+            retval.add(String.format(Locale.getDefault(),
+                    "%02d-%02d-%04d",
                     d.get(Calendar.DAY_OF_MONTH),
                     d.get(Calendar.MONTH)+1,
                     d.get(Calendar.YEAR)) );
@@ -290,11 +291,7 @@ public class CloudantManager extends Thread {
                 response.append(inputLine);
             }
             in.close();
-        } catch (ConnectException e) {
-            Log.e("ADV RUN GET", e.toString());
-        }catch (ProtocolException e) {
-            Log.e("ADV RUN GET", e.toString());
-        } catch (MalformedURLException e) {
+        } catch (ConnectException | ProtocolException | MalformedURLException e) {
             Log.e("ADV RUN GET", e.toString());
         } catch (IOException e) {
             Log.e("ADV RUN GET", e.toString());
@@ -316,6 +313,8 @@ public class CloudantManager extends Thread {
                 DBNAME,
                 game.getId(),
                 game.getRev());
+
+        //TODO stop using deprecated APIs and use Android's "volley" API
 
         try {
             Log.d("DELETE", game.toString());

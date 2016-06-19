@@ -1,11 +1,9 @@
 package org.advmiguelturra;
 
-import android.util.Log;
-
 import java.util.Comparator;
 
 /**
- * Created by nacho on 4/07/15.
+ * Comparator class for Categories.
  */
 public class CategoryComparator implements Comparator<Game> {
 

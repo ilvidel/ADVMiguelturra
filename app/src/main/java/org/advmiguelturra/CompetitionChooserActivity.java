@@ -1,13 +1,9 @@
 package org.advmiguelturra;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.GridView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -47,7 +43,7 @@ public class CompetitionChooserActivity extends AppCompatActivity {
         CloudantTask task = new CloudantTask(getApplicationContext());
         task.execute(CloudantTask.Action.GET_COMPS);
         ArrayList<Competition> list = null;
-        Object obj = null;
+        Object obj = new Object();
 
         try {
             obj = task.get();

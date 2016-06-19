@@ -6,11 +6,11 @@ import java.io.Serializable;
  * Created by nacho on 30/06/14.
  */
 public enum Phase implements Serializable {
-    LIGA,
-    ELIMINATORIA,
-    OCTAVOS,
-    CUARTOS,
+    LEAGUE,
+    PLAY_OFF,
+    SECOND_ROUND,
+    QUARTERFINAL,
     SEMIFINAL,
-    BRONCE,
+    BRONZE,
     FINAL;
 }
