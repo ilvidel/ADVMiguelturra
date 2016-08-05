@@ -153,6 +153,7 @@ public class AdvNotification {
             data.put("message", getMessage());
             data.put("title", getTitle());
             data.put("subtext", getSubtext());
+            data.put("extra", getExtra());
 
             json.put("to", getDestination());
             json.put("priority", "normal");

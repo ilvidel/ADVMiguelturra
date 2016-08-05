@@ -51,10 +51,17 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
      * @param remote FCM message body received.
      */
     private void sendNotification(RemoteMessage remote) {
-        Intent intent = new Intent(this, MainActivity.class);
+        String extra = remote.getData().get("extra");
+        Intent intent;
+        if(extra == null || extra.isEmpty()) {
+            intent = new Intent(this, MainActivity.class);
+        } else {
+            intent = new Intent(this, GameActivity.class);
+            intent.putExtra("game", extra);
+        }
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
-                PendingIntent.FLAG_ONE_SHOT);
+                PendingIntent.FLAG_UPDATE_CURRENT);
 
         Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.adv_circle);
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
