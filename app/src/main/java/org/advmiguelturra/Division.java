@@ -4,7 +4,7 @@ package org.advmiguelturra;
  * Game divisions, by gener
  */
 public enum Division {
-    WOMEN,
-    MEN,
-    MIXED
+    FEMENINA, //women
+    MASCULINA, //men
+    MIXTO //mixed
 }
