@@ -1,5 +1,6 @@
 package org.advmiguelturra;
 
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import org.json.JSONException;
@@ -30,9 +31,9 @@ public class Game implements Serializable {
         rev = "";
         date = Calendar.getInstance();
         category = Category.AFICIONADOS;
-        division = Division.MEN;
+        division = Division.MASCULINA;
         competition = "Competición";
-        phase = Phase.LEAGUE;
+        phase = Phase.LIGA;
         pool = 'A';
         teamA = "EquipoA";
         teamB = "EquipoB";
@@ -42,6 +43,7 @@ public class Game implements Serializable {
 
     public Game(JSONObject game) {
         try {
+//            Log.d("GAME", game.getString("_id"));
             this.id = game.getString("_id");
             this.rev = game.getString("_rev");
 
@@ -136,7 +138,7 @@ public class Game implements Serializable {
     }
 
     public void setCompetition(String competition) {
-        this.competition = competition.toUpperCase();
+        this.competition = safe(competition.toUpperCase());
     }
 
     public String getTeamA() {
@@ -144,7 +146,7 @@ public class Game implements Serializable {
     }
 
     public void setTeamA(String teamA) {
-        this.teamA = teamA;
+        this.teamA = safe(teamA);
     }
 
     public String getTeamB() {
@@ -152,7 +154,7 @@ public class Game implements Serializable {
     }
 
     public void setTeamB(String teamB) {
-        this.teamB = teamB;
+        this.teamB = safe(teamB);
     }
 
     public char getPool() {
@@ -392,4 +394,23 @@ public class Game implements Serializable {
         int aux = (int) (Math.random()* (top-bottom));
         return aux+bottom;
     }
+
+    @NonNull
+    private String
+    safe(String text) {
+        return text.replace('á', 'a')
+                .replace('é', 'e')
+                .replace('í', 'i')
+                .replace('ó', 'o')
+                .replace('ú', 'u')
+                .replace('Á', 'A')
+                .replace('É', 'E')
+                .replace('Í', 'I')
+                .replace('Ó', 'O')
+                .replace('Ú', 'U')
+                .replace('ü', 'u')
+                .replace('ñ', 'n')
+                .replace('Ñ', 'N');
+    }
+
 }
