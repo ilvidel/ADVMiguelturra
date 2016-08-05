@@ -53,11 +53,12 @@ public class MainActivity extends Activity {
 
     public void showQualifications(View v) {
         if(!Administrator.ADMIN_MODE)
-            openWebPage("http://www.advmiguelturra.org/vplaya/torneo-clasificacion.html");
+            openWebPage("http://www.advmiguelturra.org/vplaya/torneo/clasificacion.html");
         else {
-            Intent ranking = new Intent(getApplicationContext(), RankingActivity.class);
-            ranking.putExtra("category", "ALEVIN");
-            startActivity(ranking);
+            openWebPage("http://www.advmiguelturra.org/cgi-bin/clasificacion.py");
+//            Intent ranking = new Intent(getApplicationContext(), RankingActivity.class);
+//            ranking.putExtra("category", "AFICIONADOS");
+//            startActivity(ranking);
         }
     }
 
