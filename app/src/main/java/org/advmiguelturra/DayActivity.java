@@ -5,11 +5,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -23,7 +21,7 @@ import java.util.concurrent.ExecutionException;
 
 public class DayActivity extends AppCompatActivity {
 
-    private Competition competition;
+    private String query;
     private ArrayList<Game> games;
 
     @Override
@@ -31,7 +29,8 @@ public class DayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day);
 
-        competition = (Competition) getIntent().getSerializableExtra("competition");
+        query = getIntent().getStringExtra("query");
+        Log.d("DAY", "CreateDay query: " + query);
         showGameList();
     }
 
@@ -59,9 +58,18 @@ public class DayActivity extends AppCompatActivity {
             case R.id.action_order_date:
                 orderByDate();
                 break;
+            case R.id.open_search_activity:
+                open_search_activity();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void open_search_activity() {
+        Intent search = new Intent(getApplicationContext(), SearchActivity.class);
+        search.putExtra("competition", query.substring("competition:".length()));
+        startActivity(search);
     }
 
     private void orderByDate() {
@@ -77,16 +85,16 @@ public class DayActivity extends AppCompatActivity {
     }
 
     /**
-     * Retrieves all games corresponding to the current competition
+     * Retrieves all games corresponding to the current query
      */
     private void showGameList() {
-        if (competition == null || competition.getName().isEmpty()){
+        if (query == null || query.isEmpty()){
             Log.w("DAY", "No se ha indicado ninguna competición");
             return;
         }
 
         CloudantTask cloudant = new CloudantTask(getApplicationContext());
-        cloudant.execute(CloudantTask.Action.SEARCH, "competition", competition.getId());
+        cloudant.execute(CloudantTask.Action.SEARCH, query);
         ArrayList<JSONObject> list = null;
         Object obj = null;
 

@@ -2,7 +2,7 @@ package org.advmiguelturra;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,9 +26,9 @@ public class CompetitionListAdapter extends BaseAdapter {
         @Override
         public void onClick(View v) {
             Intent calendarActivity = new Intent(context, DayActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("competition", items.get(v.getId()));
-            calendarActivity.putExtras(bundle);
+            String query = String.format("competition:\"%s\"", items.get(v.getId()).getId());
+            calendarActivity.putExtra("query", query.replace(" ", "%20"));
+            Log.d("CompetitionListAdapter", "Search query: " + query);
             context.startActivity(calendarActivity);
         }
     };

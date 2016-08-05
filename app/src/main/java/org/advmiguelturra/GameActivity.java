@@ -18,6 +18,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Locale;
@@ -64,13 +66,29 @@ public class GameActivity extends Activity {
 
 
         Intent intent = getIntent();
-        Bundle b = intent.getExtras();
-        adding = b.getBoolean("adding", false);
+        adding = intent.getBooleanExtra("adding", false);
         if(adding)
             game = new Game();
-        else
-            game = (Game) b.getSerializable("game");
+        else {
+            String gid = intent.getStringExtra("game");
+            Log.d("GAME ACT", "getting game " + gid);
+            game = getGameFromCloud(gid);
+        }
         initGUI();
+    }
+
+    private Game getGameFromCloud(String gid) {
+        CloudantTask cloudant = new CloudantTask(getApplicationContext());
+        cloudant.execute(CloudantTask.Action.GET_GAME, gid);
+        JSONObject json = null;
+        try {
+            json = (JSONObject) cloudant.get();
+        } catch (InterruptedException e) {
+            Log.e("GAME", "Operation interrupted: " + e);
+        } catch (ExecutionException e) {
+            Log.e("GAME", e.toString());
+        }
+        return new Game(json);
     }
 
     public void initGUI() {
@@ -210,22 +228,23 @@ public class GameActivity extends Activity {
         if (!Administrator.ADMIN_MODE)
             finish();
 
-        Game game = createGame();
-        if(game==null) {
-            Toast t = Toast.makeText(getBaseContext(), "The game is null, aborting", Toast.LENGTH_SHORT);
-            Log.w("GAME", "Could not commit game/modifications, the game is null");
-            t.show();
-            return;
-        }
-
-        CloudantTask cloudant = new CloudantTask(getApplicationContext());
         String response = null;
         Object obj = null;
 
         try {
-            if (adding){
+            Game game = createGame();
+            if (game == null) {
+                Toast t = Toast.makeText(getBaseContext(), "The game is null, aborting", Toast.LENGTH_SHORT);
+                Log.w("GAME", "Could not commit game/modifications, the game is null");
+                t.show();
+                return;
+            }
+
+            CloudantTask cloudant = new CloudantTask(getApplicationContext());
+
+            if (adding) {
                 cloudant.execute(CloudantTask.Action.NEW, game);
-            }else {
+            } else {
                 cloudant.execute(CloudantTask.Action.EDIT, game);
             }
 
@@ -245,16 +264,18 @@ public class GameActivity extends Activity {
 
         RadioButton noneRadio = (RadioButton) findViewById(R.id.noneRadio);
 
-        if(noneRadio.isChecked()) {
-            Toast t = Toast.makeText(this, response, Toast.LENGTH_SHORT);
-            t.show();
-            finish();
+        if (noneRadio.isChecked() == false) {
+            sendNotification();
         }
 
-        // send a notification
+        Toast t = Toast.makeText(this, response, Toast.LENGTH_SHORT);
+        t.show();
+        finish();
+    }
+
+    private void sendNotification() {
         RadioButton nuevoRadio = (RadioButton) findViewById(R.id.newgameRadio);
         RadioButton dateRadio = (RadioButton) findViewById(R.id.dateRadio);
-        RadioButton scoreRadio = (RadioButton) findViewById(R.id.scoreRadio);
         String title;
         String subtext = String.format("%s - %s", game.getDateAsString(), game.getTime());
         String message = String.format("%s vs %s", game.getTeamA(), game.getTeamB());
@@ -295,7 +316,7 @@ public class GameActivity extends Activity {
     }
 
 
-    private Game createGame() {
+    private Game createGame() throws ExecutionException, InterruptedException {
         String equipoa;
         String equipob;
 
@@ -349,6 +370,14 @@ public class GameActivity extends Activity {
         game.setSetsB(b);
 
         return game;
+    }
+
+    private String generateId() throws ExecutionException, InterruptedException {
+        CloudantTask cloudant = new CloudantTask(getApplicationContext());
+        cloudant.execute(CloudantTask.Action.GET_GAME_ID, game.getCompetition());
+        String response = (String) cloudant.get();
+        assert response.startsWith(game.getCompetition().toUpperCase().replace(" ", ""));
+        return response;
     }
 
     public void showDatePickerDialog(View v) {
