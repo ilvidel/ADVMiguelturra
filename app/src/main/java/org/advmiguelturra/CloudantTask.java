@@ -26,7 +26,9 @@ public class CloudantTask extends AsyncTask {
         GET_COMP_DAYS,
         DELETE,
         GET_TEAM,
-        ADD_NOTIFICATION
+        ADD_NOTIFICATION,
+        GET_GAME_ID,
+        GET_GAME;
     }
 
     private Context context;
@@ -48,38 +50,38 @@ public class CloudantTask extends AsyncTask {
             return new ConnectException("ERROR: No se ha encontrado una conexión válida");
         }
 
-        try {
-            switch (action) {
-                case EDIT:
-                    response = cloudant.modifyGame((Game) params[1]);
-                    break;
-                case NEW:
-                    response = cloudant.addGame((Game) params[1]);
-                    break;
-                case SEARCH:
-                    String searchby = (String) params[1];
-                    String term = (String) params[2];
-                    return cloudant.search(searchby, term);
-                case ADD_NOTIFICATION:
-                    response = cloudant.commitNotification((AdvNotification) params[1]);
-                    break;
-                case DELETE:
-                    response = cloudant.delete((Game) params[1]);
-                    break;
-                case GET_COMPS:
-                    return cloudant.getCompetitionList();
-                case GET_COMP_DAYS:
-                    return cloudant.getDaysForCompetition((String) params[1]);
-                case GET_TEAM:
-                    return cloudant.getTeam((String) params[1]);
-            }
+        switch (action) {
+            case EDIT:
+                response = cloudant.modifyGame((Game) params[1]);
+                break;
+            case NEW:
+                response = cloudant.addGame((Game) params[1]);
+                break;
+            case SEARCH:
+                return cloudant.search((String) params[1]);
+            case ADD_NOTIFICATION:
+                response = cloudant.commitNotification((AdvNotification) params[1]);
+                break;
+            case DELETE:
+                response = cloudant.delete((Game) params[1]);
+                break;
+            case GET_COMPS:
+                return cloudant.getCompetitionList();
+            case GET_COMP_DAYS:
+                return cloudant.getDaysForCompetition((String) params[1]);
+            case GET_TEAM:
+                return cloudant.getTeam((String) params[1]);
+            case GET_GAME_ID:
+                return cloudant.getNewGameId((String) params[1]);
+            case GET_GAME:
+                return cloudant.getGame((String) params[1]);
+        }
 
-            if(response.getBoolean("ok")) return TEXT_SUCCESS;
+        try {
+            if (response.getBoolean("ok")) return TEXT_SUCCESS;
             else return response.toString(3);
-        } catch (IOException | JSONException e) {
-            Log.e("CLOUDANT", "" + e);
-            Toast t = Toast.makeText(context, "Ha ocurrido un error: " + e, Toast.LENGTH_LONG);
-            t.show();
+        }catch (JSONException e){
+            Log.i("ADV::CloudantTask", response.toString());
         }
 
         return null;
@@ -89,7 +91,7 @@ public class CloudantTask extends AsyncTask {
     protected void onPostExecute(Object o) {
         super.onPostExecute(o);
 
-        Log.i("ADV TASK", "Taks finished: " + action.toString());
+        Log.i("ADV::CloudantTask", "Taks finished: " + action.toString());
     }
 
     public boolean hasConnection() {
@@ -105,7 +107,7 @@ public class CloudantTask extends AsyncTask {
 
         if(connType != ConnectivityManager.TYPE_WIFI && connType != ConnectivityManager.TYPE_MOBILE) {
             isConnected = false;
-            Log.i("ADV", "No hay conexión");
+            Log.i("ADV::CloudantTask", "No hay conexión");
         }
 
         return isConnected;

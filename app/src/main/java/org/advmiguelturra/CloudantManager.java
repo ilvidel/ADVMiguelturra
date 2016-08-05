@@ -3,6 +3,7 @@ package org.advmiguelturra;
 import android.util.Log;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -15,10 +16,8 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.ConnectException;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -36,7 +35,7 @@ public class CloudantManager extends Thread {
     public CloudantManager() {
     }
 
-    private JSONObject commit(Game game, boolean update) throws IOException, JSONException {
+    private JSONObject commit(Game game, boolean update) {
         JSONObject jsonGame = game.toJson();
         String url = String.format("http://%s/%s/", SERVER, DBNAME);
 
@@ -44,9 +43,47 @@ public class CloudantManager extends Thread {
             //remove id and rev when adding a NEW game
             jsonGame.remove("_id");
             jsonGame.remove("_rev");
+            try {
+                jsonGame.put("_id", getNewGameId(game.getCompetition()));
+            } catch (JSONException e) {
+                Log.e("ADV::COMMIT", "Problema al asignar el ID del partido: " + e);
+            }
         }
 
         return runPOSTrequest(url, jsonGame.toString(), null);
+    }
+
+
+    /**
+     * Gets a new ID for a game. The ID will be of the form COMPETITION_NUM
+     * @param competition The name of the competition of this game
+     * @return The new ID of the game
+     */
+    public String getNewGameId(String competition) {
+        ArrayList<String> ids = new ArrayList<>();
+        String url = String.format(
+                "https://%s/%s/_design/gamesearch/_search/searchAll?q=%s&include_docs=true&limit=200",
+                SERVER, DBNAME, "competition:\"" + competition + "\"");
+
+        try {
+            JSONObject response = new JSONObject(runGETrequest(url));
+            JSONArray allGames = response.getJSONArray("rows");
+            int count = allGames.length();
+
+            for (int i = 0; i < count; i++) {
+                ids.add(((JSONObject) allGames.get(i)).getString("id"));
+            }
+        }catch (JSONException e) {
+            Log.e("ADV::getNewID", "JSON mal formado");
+        }
+
+        String newID = competition.toUpperCase().replace(" ", "") + "_";
+        int i = 1;
+        while (ids.contains(newID + String.valueOf(i))) {
+            i++;
+        }
+
+        return newID + String.valueOf(i);
     }
 
     /**
@@ -55,8 +92,8 @@ public class CloudantManager extends Thread {
      * @param notification The notification to send
      * @return The response from the DB
      */
-    public JSONObject commitNotification(AdvNotification notification) throws IOException, JSONException {
-        String url =  "https://fcm.googleapis.com/fcm/send";
+    public JSONObject commitNotification(AdvNotification notification) {
+        String url = "https://fcm.googleapis.com/fcm/send";
         JSONObject jsonNotify = notification.toJson();
 
         return runPOSTrequest(url, jsonNotify.toString(), Credentials.FIREBASE_API_KEY);
@@ -68,7 +105,7 @@ public class CloudantManager extends Thread {
      * @param data The data to be inserted
      * @return The response from the DB
      */
-    private JSONObject runPOSTrequest(String url, String data, String auth) throws JSONException, IOException {
+    private JSONObject runPOSTrequest(String url, String data, String auth) {
         Log.d("RUN POST", data);
 
         //TODO stop using deprecated APIs and use Android's "volley" API
@@ -77,7 +114,13 @@ public class CloudantManager extends Thread {
         HttpPost request = new HttpPost(url);
         JSONObject json = null;
 
-        StringEntity entity = new StringEntity(data, "UTF-8");
+        StringEntity entity = null;
+        try {
+            entity = new StringEntity(data, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            Log.e("ADV::POST", "Problema con el encoding");
+            return null;
+        }
         entity.setContentType("application/json");
         request.setEntity(entity);
 
@@ -86,18 +129,29 @@ public class CloudantManager extends Thread {
         else
             request.setHeader("Authorization", "key=" + auth);
 
-        HttpResponse response = httpClient.execute(request);
-        String responseText = EntityUtils.toString(response.getEntity());
-        Log.d("ADV POST", responseText);
-        json = new JSONObject(responseText);
-        String resp = json.toString(2);
-        Log.i("ADV POST", resp);
+        try {
+            HttpResponse response = httpClient.execute(request);
+            String responseText = EntityUtils.toString(response.getEntity());
+            Log.d("ADV POST", responseText);
+            json = new JSONObject(responseText);
+            String resp = json.toString(2);
+            Log.i("ADV::POST", resp);
+        }catch (JSONException e) {
+            Log.e("ADV::POST", "JSON mal formado: " + e);
+            return null;
+        } catch (ClientProtocolException e) {
+            Log.e("ADV::POST", "Problema de conexión: " + e);
+            return null;
+        } catch (IOException e) {
+            Log.e("ADV::POST", "Problema de conexión: " + e);
+            return null;
+        }
 
         if(!json.has("ok") && json.has("message_id")) {
             try {
                 json.put("ok", json.getInt("message_id") > 0);
             } catch (JSONException e) {
-                Log.w("ADV POST", e);
+                Log.w("ADV::POST", e);
             }
         }
         return json;
@@ -108,8 +162,20 @@ public class CloudantManager extends Thread {
      * @param game The game to be added
      * @return The response from the DB
      */
-    public JSONObject addGame(Game game) throws IOException, JSONException {
+    public JSONObject addGame(Game game) {
         return commit(game, false);
+    }
+
+    public JSONObject getGame(String gameId) {
+        String url = String.format("https://%s/%s/%s", SERVER, DBNAME, gameId);
+        Log.d("GET GAME", url);
+        JSONObject json = null;
+        try {
+            json = new JSONObject(runGETrequest(url));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return json;
     }
 
     /**
@@ -117,25 +183,21 @@ public class CloudantManager extends Thread {
      * @param game The game, with the updated information
      * @return The response from the DB
      */
-    public JSONObject modifyGame(Game game) throws IOException, JSONException {
+    public JSONObject modifyGame(Game game) {
         return commit(game, true);
     }
 
     /**
      * Perform a search query to the database.
      *
-     * @param searchBy The name of the index to use for the search. It must be defined in the database
-     * @param term     The term to search for.
+     * @param query Cloudant-formatted search query
      */
-    public ArrayList<JSONObject> search(String searchBy, String term) {
-        Log.d("SEARCH", searchBy + " ** " + term);
+    public ArrayList<JSONObject> search(String query) {
         ArrayList<JSONObject> retval = new ArrayList<>();
         String url = String.format(
-                "https://%s/%s/_design/gamesearch/_search/searchAll?q=%s:\"%s\"&include_docs=true&limit=200",
-                SERVER,
-                DBNAME,
-                searchBy,
-                term.replace(" ", "%20"));
+                "https://%s/%s/_design/gamesearch/_search/searchAll?q=%s&include_docs=true&limit=200",
+                SERVER, DBNAME, query);
+        Log.d("QUERY", query);
 
         try {
             int total;
@@ -276,7 +338,7 @@ public class CloudantManager extends Thread {
         StringBuilder response = new StringBuilder();
 
         try {
-            URL obj = new URL(url);
+            URL obj = new URL(url.replace(" ", "%20"));
             Log.d("URL", obj.toString());
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
@@ -291,10 +353,8 @@ public class CloudantManager extends Thread {
                 response.append(inputLine);
             }
             in.close();
-        } catch (ConnectException | ProtocolException | MalformedURLException e) {
-            Log.e("ADV RUN GET", e.toString());
         } catch (IOException e) {
-            Log.e("ADV RUN GET", e.toString());
+            Log.e("ADV::GET", e.toString());
         }
 
         return response.toString();
@@ -308,11 +368,7 @@ public class CloudantManager extends Thread {
      * @return The response from the DB
      */
     public JSONObject delete(Game game) {
-        String url = String.format("http://%s/%s/%s?rev=%s",
-                SERVER,
-                DBNAME,
-                game.getId(),
-                game.getRev());
+        String url = String.format("http://%s/%s/%s?rev=%s", SERVER, DBNAME, game.getId(), game.getRev());
 
         //TODO stop using deprecated APIs and use Android's "volley" API
 
