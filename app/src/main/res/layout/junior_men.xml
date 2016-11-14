@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
                 android:tag="team_jm.jpg"
-                android:src="@drawable/team_jm" />
+                android:src="@drawable/default_team" />
 
             <TableLayout
                 android:id="@+id/team_roster"
@@ -52,7 +52,7 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="1"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -60,9 +60,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="SÁNCHEZ, José Manuel"
                         android:layout_column="1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:text="FERNÁNDEZ, Alejandro" />
                 </TableRow>
 
                 <TableRow
@@ -75,7 +75,7 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="2"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -83,9 +83,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="RODRIGO, David"
                         android:layout_column="1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:text="GARCÍA, Manuel" />
                 </TableRow>
 
                 <TableRow
@@ -98,7 +98,7 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="3"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -106,9 +106,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="VILLA, Saúl"
                         android:layout_column="1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:text="GARCÍA-PARDO, Iván" />
                 </TableRow>
 
                 <TableRow
@@ -121,7 +121,7 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="6"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -129,9 +129,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="LEÓN, Manuel"
                         android:layout_column="1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:text="HERVÁS, Ulises" />
                 </TableRow>
 
                 <TableRow
@@ -144,7 +144,7 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="10"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -152,9 +152,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="LORO, Alberto"
                         android:layout_column="1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:text="HUERTAS, Jesús Miguel" />
                 </TableRow>
 
                 <TableRow
@@ -167,7 +167,7 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="11"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -175,9 +175,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="SOBRINO, Sergio"
                         android:layout_column="1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:text="MORCILLO, Christopher" />
                 </TableRow>
 
                 <TableRow
@@ -190,7 +190,7 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="12"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -198,9 +198,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="RIVERO, Raúl"
                         android:layout_column="1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:text="MUÑOZ, Alberto" />
                 </TableRow>
 
                 <TableRow
@@ -213,7 +213,7 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="13"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -221,9 +221,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="HUERTAS, Jesús Miguel"
                         android:layout_column="1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:text="RODRIGO, David" />
                 </TableRow>
 
                 <TableRow
@@ -236,7 +236,7 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="14"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -244,9 +244,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="RUIZ, Juan Martín"
                         android:layout_column="1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:text="RODRIGO, Emilio" />
                 </TableRow>
 
                 <TableRow
@@ -259,7 +259,7 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="15"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -267,9 +267,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="GÓMEZ, Alejandro"
                         android:layout_column="1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:text="RUIZ, Juan Martín" />
                 </TableRow>
 
                 <TableRow
@@ -282,7 +282,7 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="16"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -290,9 +290,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="GONZÁLEZ, Héctor"
                         android:layout_column="1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:text="SÁNCHEZ, Jaime " />
                 </TableRow>
 
                 <TableRow
@@ -305,7 +305,7 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="17"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -313,9 +313,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="RODRIGO, Emilio"
                         android:layout_column="1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:text="SÁNCHEZ, José Manuel" />
                 </TableRow>
 
                 <TableRow
@@ -328,7 +328,7 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="18"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -336,9 +336,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="GARCÍA, Manuel"
                         android:layout_column="1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:text="SOBRINO, Sergio" />
                 </TableRow>
 
                 <TableRow
@@ -351,7 +351,7 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="19"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -359,22 +359,23 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="MORCILLO, Christopher"
                         android:layout_column="1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:text="VILLA, Saúl" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#ccc">
+                    android:background="#ccc"
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="20"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -382,7 +383,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="FERNÁNDEZ, Alejandro"
                         android:layout_column="1"
                         android:layout_weight="1" />
                 </TableRow>

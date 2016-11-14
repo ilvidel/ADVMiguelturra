@@ -34,7 +34,7 @@
                 android:layout_height="200dp"
                 android:onClick="openPicture"
                 android:tag="team_jfa.jpg"
-                android:src="@drawable/team_jfa" />
+                android:src="@drawable/default_team" />
 
             <TableLayout
                 android:id="@+id/team_roster"
@@ -43,269 +43,16 @@
                 android:paddingTop="@dimen/activity_vertical_margin">
 
                 <TableRow
-                    android:background="#ccc"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="#ccc">
 
                     <TextView
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="1"
-                        android:layout_column="0"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="ARROYO, Cristina"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
-                </TableRow>
-
-                <TableRow
-                    android:background="#999"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:textStyle="bold"
-                        android:text="2"
-                        android:layout_column="0"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="SÁNCHEZ, Lorena"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
-                </TableRow>
-
-                <TableRow
-                    android:background="#ccc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:textStyle="bold"
-                        android:text="4"
-                        android:layout_column="0"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="SÁNCHEZ, Estela"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
-                </TableRow>
-
-                <TableRow
-                    android:background="#999"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:textStyle="bold"
-                        android:text="5"
-                        android:layout_column="0"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="ALBIÑANA, Lola"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
-                </TableRow>
-
-                <TableRow
-                    android:background="#ccc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:textStyle="bold"
-                        android:text="6"
-                        android:layout_column="0"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="GÓMEZ, Marta"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
-                </TableRow>
-
-                <TableRow
-                    android:background="#999"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:textStyle="bold"
-                        android:text="7"
-                        android:layout_column="0"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="DE LA BELDAD, Ana"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
-                </TableRow>
-
-                <TableRow
-                    android:background="#ccc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:textStyle="bold"
-                        android:text="8"
-                        android:layout_column="0"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="MARTÍNEZ, Cristina"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
-                </TableRow>
-
-                <TableRow
-                    android:background="#999"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:textStyle="bold"
-                        android:text="10"
-                        android:layout_column="0"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="RIVERA, Eva"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
-                </TableRow>
-
-                <TableRow
-                    android:background="#ccc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:textStyle="bold"
-                        android:text="12"
-                        android:layout_column="0"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="MATAS, Rebeca"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
-                </TableRow>
-
-                <TableRow
-                    android:background="#999"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:textStyle="bold"
-                        android:text="13"
-                        android:layout_column="0"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="HERVÁS, Alba"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
-                </TableRow>
-
-                <TableRow
-                    android:background="#ccc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:textStyle="bold"
-                        android:text="14"
-                        android:layout_column="0"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:text="NIETO, Marta"
-                        android:layout_column="1"
-                        android:layout_weight="1" />
-                </TableRow>
-
-                <TableRow
-                    android:background="#999"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:textStyle="bold"
-                        android:text="15"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -319,16 +66,16 @@
                 </TableRow>
 
                 <TableRow
-                    android:background="#ccc"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="#999">
 
                     <TextView
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="16"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -342,16 +89,177 @@
                 </TableRow>
 
                 <TableRow
-                    android:background="#999"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="#ccc">
 
                     <TextView
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:text="19"
+                        android:text="0"
+                        android:layout_column="0"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:text="DE LA BELDAD, Ana"
+                        android:layout_column="1"
+                        android:layout_weight="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#999">
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:text="GÓMEZ, Marta"
+                        android:layout_column="1"
+                        android:layout_weight="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ccc">
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:text="GRANDE, Laura"
+                        android:layout_column="1"
+                        android:layout_weight="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#999">
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:text="LÓPEZ, Marina"
+                        android:layout_column="1"
+                        android:layout_weight="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ccc">
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:text="MARTÍNEZ, Cristina"
+                        android:layout_column="1"
+                        android:layout_weight="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#999">
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:text="MATAS, Rebeca"
+                        android:layout_column="1"
+                        android:layout_weight="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ccc">
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:text="NIETO, Marta"
+                        android:layout_column="1"
+                        android:layout_weight="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#999">
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
                         android:layout_column="0"
                         android:gravity="center" />
 
@@ -363,6 +271,50 @@
                         android:layout_column="1"
                         android:layout_weight="1" />
                 </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ccc">
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:text="SÁNCHEZ, Estela"
+                        android:layout_column="1"
+                        android:layout_weight="1" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#999">
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:text="SÁNCHEZ, Lorena"
+                        android:layout_column="1"
+                        android:layout_weight="1" />
+                </TableRow>
 
             </TableLayout>
 
@@ -371,17 +323,17 @@
                 android:paddingBottom="8dp"
                 android:textColor="@color/background_material_light"
                 android:textStyle="bold"
-                android:text="Entrenador: SÁNCHEZ, Miriam"
+                android:text="Entrenador: DOMÍNGUEZ, Sergio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <TextView android:id="@+id/team_assistant_label"
+            <!--TextView android:id="@+id/team_assistant_label"
                 android:paddingBottom="8dp"
                 android:textColor="@color/background_material_light"
                 android:textStyle="bold"
-                android:text="Asistente: DOMÍNGUEZ, Sergi"
+                android:text="Asistente: CARRILLO, Carlos Manuel"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content" /-->
 
         </LinearLayout>
     </ScrollView>
