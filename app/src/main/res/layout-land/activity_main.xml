@@ -28,6 +28,14 @@
             android:onClick="showCalendar"/>
 
         <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clasificaciones VoleyPlaya"
+            android:id="@+id/rankingButton"
+            android:enabled="true"
+            android:onClick="showQualifications"/>
+
+        <Button
             android:id="@+id/teamsButton"
             android:text="Equipos"
             android:layout_width="match_parent"
@@ -41,16 +49,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="viewPictures"/>
-
-        <!--Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Clasificaciones"
-            android:id="@+id/rankingButton"
-            android:enabled="true"
-            android:onClick="showQualifications"
-            android:layout_weight="1"
-            android:visibility="gone" /-->
 
         <!--Button
             android:layout_width="wrap_content"
@@ -97,13 +95,13 @@
         <LinearLayout
             android:id="@+id/adminbuttons"
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#f03"
+                android:background="#ff0050"
                 android:text="Añadir Partido"
                 android:id="@+id/addGameButton"
                 android:onClick="addGame"/>
@@ -111,7 +109,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#f03"
+                android:background="#ff0050"
                 android:text="Crear Notificación"
                 android:id="@+id/test_createNotification"
                 android:onClick="createNotification" />
