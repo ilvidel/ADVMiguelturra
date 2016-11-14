@@ -44,177 +44,318 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="#ccc">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:background="#ccc"
-                        android:text="4"
+                        android:text="0"
                         android:layout_column="0" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:background="#ccc"
+                        android:text="BRÍGIDO, Juan Antonio"
+                        android:layout_column="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#999">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:text="CORTÉS, Carlos"
+                        android:layout_column="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ccc">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:text="GONZÁLEZ, Héctor"
+                        android:layout_column="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#999">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:text="GONZÁLEZ, Joaquín"
                         android:layout_column="1" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="#ccc">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:background="#999"
-                        android:text="5"
+                        android:text="0"
                         android:layout_column="0" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:background="#999"
-                        android:text="ALONSO, Sebastián"
+                        android:text="LEÓN, Manuel"
                         android:layout_column="1" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="#999">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:background="#ccc"
-                        android:text="8"
+                        android:text="0"
                         android:layout_column="0" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:background="#ccc"
-                        android:text="DÍEZ, Ignacio"
+                        android:text="MALAGUILLA, Juan"
                         android:layout_column="1" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="#ccc">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:background="#999"
-                        android:text="10"
+                        android:text="0"
                         android:layout_column="0" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:background="#999"
-                        android:text="NIETO, Jesús"
+                        android:text="PECO, David"
                         android:layout_column="1" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="#999">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:background="#ccc"
-                        android:text="11"
+                        android:text="0"
                         android:layout_column="0" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:background="#ccc"
-                        android:text="CARRILLO, Carlos Manuel"
-                        android:layout_column="1" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:textStyle="bold"
-                        android:background="#999"
-                        android:text="13"
-                        android:layout_column="0" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:background="#999"
                         android:text="PONSODA, Ignacio"
                         android:layout_column="1" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="#ccc">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:background="#ccc"
-                        android:text="15"
+                        android:text="0"
                         android:layout_column="0" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:background="#ccc"
-                        android:text="MORENO, Diego"
+                        android:text="RODADO, Borja"
                         android:layout_column="1" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="#999">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:textStyle="bold"
-                        android:background="#999"
-                        android:text="18"
+                        android:text="0"
                         android:layout_column="0" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/abc_dialog_list_padding_vertical_material"
-                        android:background="#999"
-                        android:text="LÓPEZ, Ramón"
+                        android:text="ROMERO, David"
+                        android:layout_column="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ccc">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:text="SEGURA, Juan Jesús"
+                        android:layout_column="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#999">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:text="YÉBENES, Francisco Javier"
+                        android:layout_column="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ccc"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:text=" "
+                        android:layout_column="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#999"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:text=" "
+                        android:layout_column="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ccc"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
+                        android:textStyle="bold"
+                        android:text="0"
+                        android:layout_column="0" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/abc_dialog_list_padding_vertical_material"
                         android:layout_column="1" />
                 </TableRow>
 
@@ -225,7 +366,7 @@
                 android:paddingBottom="8dp"
                 android:textColor="@color/background_material_light"
                 android:textStyle="bold"
-                android:text="Entrenador: NIETO, Jesús"
+                android:text="Entrenadora: RUIZ, María José"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -235,7 +376,8 @@
                 android:textStyle="bold"
                 android:text="Asistente: GONZÁLEZ, Joaquín"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
 
         </LinearLayout>
     </ScrollView>
